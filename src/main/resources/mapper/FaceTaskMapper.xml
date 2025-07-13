@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yys.mapper.FaceTaskMapper">
+
+    <select id="selectFaceTask" resultType="com.yys.entity.face.FaceTask">
+        SELECT
+            ft.* ,
+            cs.group_name,
+            ac.id as camera_id,
+            ac.video_streaming,
+            ac.zlm_id,
+            ac.zlm_url
+
+        FROM
+            face_task ft
+        JOIN ai_camera ac
+        ON
+            ft.camera_adress = ac.camera_location
+        JOIN camera_sector cs
+            on ac.camera_group = cs.id
+        WHERE
+            ft.face_id = #{taskId}
+    </select>
+</mapper>

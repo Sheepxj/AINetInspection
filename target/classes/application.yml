@@ -1,0 +1,123 @@
+# 服务器配置
+server:
+  port: 35251 # 服务器端口
+  servlet:
+    context-path: /api # 应用上下文路径
+
+# 春季框架相关配置
+spring:
+  flyway:
+    #是否启用
+    enabled: false
+    url: jdbc:mysql://localhost:3306/yys_aivideos
+    user: root
+    password: 123456
+    # 可以支持多个location, 用','隔开
+    locatons: classpath:db/migration
+    #是否创建元数据表
+    validate-on-migrate: true
+    clean-disabled: true
+    # 如果数据库不是空表，需要设置成 true，否则启动报错
+    baseline-on-migrate: false
+    # 版本控制日志表，默认flyway_schema_history,不同系统建议修改数据
+    table: flyway_schema_history
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver # 数据库驱动类名
+    url: jdbc:mysql://localhost:3306/yys_aivideos?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true # 数据库连接URL
+    username: root  # 数据库用户名
+    password: 123456  # 数据库密码
+
+    type: com.alibaba.druid.pool.DruidDataSource # 数据源类型，这里使用Druid
+  quartz:
+    job-store-type: jdbc
+    wait-for-jobs-to-complete-on-shutdown: true
+    overwrite-existing-jobs: true
+    jdbc:
+      initialize-schema: never
+    properties:
+      org:
+        quartz:
+          jobStore:
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+            tablePrefix: qrtz_
+          scheduler:
+            instanceId: AUTO
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+  elasticsearch:
+    uris: localhost
+    port: 9200
+    socket-timeout: 30000ms # Socket超时时间
+    connection-timeout: 1000ms # 连接超时时间
+  redis:
+    host: localhost # Redis主机
+    port: 6379 # Redis端口
+  mail:
+    host: smtp.exmail.qq.com
+    port: 25
+    username: qq@qq.com
+    password: qq
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+# 日志配置
+logging:
+  level:
+    root: INFO # 根日志级别
+    com.yys.util.JwtRequestFilter: DEBUG # JwtRequestFilter日志级别
+
+# MyBatis-Plus配置
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    # 是否开启下划线到驼峰命名的映射
+    map-underscore-to-camel-case: true
+
+#zlm 默认服务器配置
+media:
+  id: zlmediakit-local
+  # [必须修改] zlm服务器的内网IP
+  ip: 127.0.0.1
+  # [必须修改] zlm服务器的http.port
+  http-port: 8080
+  http-nginx: zlmediakiturl
+  # [必选] zlm服务器的hook.admin_params=secret
+#  secret: qdI86cUDGZKyYzUdbboc21miNA9yvW7n
+  secret: YWjABU3NO2KD8j0C9wthoyojvJDE6dtI
+  # 启用多端口模式, 多端口模式使用端口区分每路流，兼容性更好。 单端口使用流的ssrc区分， 点播超时建议使用多端口测试
+  rtp:
+    # [可选] 是否启用多端口模式, 开启后会在portRange范围内选择端口用于媒体流传输
+    enable: true
+    # [可选] 在此范围内选择端口用于媒体流传输, 必须提前在zlm上配置该属性，不然自动配置此属性可能不成功
+    port-range: 40000,45000 # 端口范围
+    # [可选] 国标级联在此范围内选择端口发送媒体流,
+    send-port-range: 50000,55000 # 端口范围
+# 自定义配置
+stream:
+  python-url: http://127.0.0.1:5050 # Python服务URL
+  warningindex: warning_table
+  rabbitsender: warning
+  minio:
+    endpoint: http://localhost:9000
+    access-key: admin
+    secret-key: 12345678
+    imgbucket:
+      name: training-img
+datapath:
+  uploadpath: /path # 上传路径
+  downloadpath: D://IntelliJ IDEA work/视频卫士/stonedtaiv-master/src/main/java/com/yys/zipdata/downloadimg/
+sendmsg:
+  files: src/main/java/com/yys/zipdata
+file:
+  upload-dir: src/main/java/com/yys/zipdata # 文件上传目录
+  uploaddir: upweights # Linux上传目录
+  upload-img: src/main/java/com/yys/imgdata #

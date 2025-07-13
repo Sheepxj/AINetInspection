@@ -1,0 +1,29 @@
+
+minio:
+  endpoint: 127.0.0.1:9005
+  access_key: admin
+  secret_key: admin123
+  secure: false
+
+rabbitmq:
+  host: 127.0.0.1
+  port: 5672
+  username: guest
+  password: guest
+  queue: training_updates
+
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  username: root
+  password: '123456'
+  database: yys_aivideos
+
+
+zlm:
+  host: 127.0.0.1
+  port: 8080
+  secret: qdI86cUDGZKyYzUdbboc21miNA9yvW7n
+
+
+
