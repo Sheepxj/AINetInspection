@@ -1,0 +1,419 @@
+# ================================
+# AI视频监控系统 - GitIgnore 配置
+# ================================
+
+# ================== Java/Spring Boot ==================
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.properties
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Java编译文件
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Spring Boot
+*.log
+*.log.*
+logs/
+application-local.yml
+application-dev.yml
+application-prod.yml
+
+# IDE文件
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+
+# ================== Node.js/Vue.js ==================
+# 依赖
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 构建输出
+dist/
+build/
+.nuxt/
+.next/
+
+# 运行时文件
+*.pid
+*.seed
+*.pid.lock
+
+# 覆盖率报告
+coverage/
+*.lcov
+
+# nyc测试覆盖率
+.nyc_output
+
+# Bower依赖目录
+bower_components
+
+# node-waf配置
+.lock-wscript
+
+# 编译的二进制插件
+build/Release
+
+# 依赖目录
+node_modules/
+jspm_packages/
+
+# TypeScript缓存
+*.tsbuildinfo
+
+# 可选的npm缓存目录
+.npm
+
+# 可选的eslint缓存
+.eslintcache
+
+# 微任务缓存
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# 可选的REPL历史记录
+.node_repl_history
+
+# 输出的npm包
+*.tgz
+
+# Yarn完整性文件
+.yarn-integrity
+
+# parcel-bundler缓存
+.cache
+.parcel-cache
+
+# Next.js构建输出
+.next
+
+# Nuxt.js构建/生成输出
+.nuxt
+dist
+
+# Gatsby文件
+.cache/
+public
+
+# Storybook构建输出
+.out
+.storybook-out
+
+# ================== Python/AI ==================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# AI/ML模型文件
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.pkl
+*.model
+*.weights
+runs/
+wandb/
+
+# ================== 数据库 ==================
+# MySQL数据文件
+*.sql
+!src/main/resources/db/migration/*.sql
+mysql-data/
+
+# SQLite
+*.sqlite
+*.sqlite3
+*.db
+
+# ================== 系统文件 ==================
+# OS生成的文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+*.tmp
+*.temp
+*.bak
+*.swp
+*~.nib
+local.properties
+
+# Linux
+*~
+
+# ================== 项目特定文件 ==================
+# 上传文件目录
+uploads/
+src/main/java/com/yys/zipdata/
+src/main/java/com/yys/imgdata/
+upweights/
+
+# 视频文件
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+*.mkv
+
+# 图片文件（除了必要的UI资源）
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+!front/src/assets/**/*.png
+!front/src/assets/**/*.jpg
+!front/src/assets/**/*.gif
+!ProIMG/*.png
+!ProIMG/*.jpg
+
+# 音频文件
+*.mp3
+*.wav
+*.ogg
+*.aac
+
+# 压缩文件
+*.zip
+*.7z
+*.tar
+*.gz
+*.bz2
+*.xz
+
+# 配置文件（包含敏感信息）
+config/local.yaml
+config/production.yaml
+.env.local
+.env.production
+
+# 日志文件
+*.log
+logs/
+log/
+
+# 临时文件
+tmp/
+temp/
+.tmp/
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# MinIO数据
+minio-data/
+
+# Redis数据
+redis-data/
+
+# Elasticsearch数据
+elasticsearch-data/
+
+# RabbitMQ数据
+rabbitmq-data/
+
+# ================== AI训练相关 ==================
+# 训练数据
+training-data/
+datasets/
+data/images/
+data/annotations/
+
+# 模型输出
+models/
+checkpoints/
+weights/
+*.weights
+
+# TensorBoard日志
+tensorboard-logs/
+tb_logs/
+
+# YOLO相关
+yolo*/
+ultralytics/
+runs/detect/
+runs/train/
+runs/val/
+
+# ================== 其他 ==================
+# 备份文件
+*.bak
+*.backup
+*.old
+
+# 编辑器临时文件
+.viminfo
+.swp
+.swo
+*~
+
+# 性能分析文件
+*.prof
+
+# 测试输出
+test-output/
+test-results/
+
+# API文档生成
+apidocs/
+swagger-output/
+
+# 证书文件
+*.pem
+*.key
+*.crt
+*.p12
+*.jks
+
+# 密钥文件
+id_rsa
+id_ed25519
+*.ppk
