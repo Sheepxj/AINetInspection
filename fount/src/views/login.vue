@@ -3,7 +3,7 @@
         <div class="page-top">
             <div class="system-title">
                 <div class="logo"><img src="@/assets/images/logo.png" alt=""></div>
-                <div class="name">思通数科 AI视频卫士</div>
+                <div class="name">智能电网运维平台</div>
             </div>
             <!-- <div class="register-btn" v-if="loginType == 'account'">
                 <el-button type="primary" size="medium">注册</el-button>
@@ -12,15 +12,15 @@
         <div class="page-main">
             <div class="left-box">
                 <div class="center-box">
-                    <div class="heading">洞察未来，智守平安——AI视界，守护每刻</div>
-                    <div class="subheading">基于深度学习的AI大模型，实现多场景实时监控与预警，精准分析用户行为，自学习优化，云边协同，高效生成自动化报告，确保安全无遗漏</div>
+                    <div class="heading">智维电网，预见隐患——AI赋能，全时护航</div>
+                    <div class="subheading">基于电网专属AI大模型，实现变电站/线路/设备实时监控与故障预警，精准识别异常状态，云边协同调度，自动警告异常，分析可能灾害，保障电网可靠运行</div>
                     <img class="center-images" src="@/assets/images/login_background.webp" alt="">
                 </div>
             </div>
             <div class="right-box" :class="{ 'bg-gray': loginType == 'qrcode' }" v-loading="loading"
                 element-loading-text="登录中">
                 <div class="account-login" v-if="loginType == 'account'">
-                    <div class="system-name">智感安防：AI大模型视频分析预警系统</div>
+                    <div class="system-name">智能电网：AI大模型电网监控与运维系统</div>
                     <div class="login-form">
                         <el-form :model="form" :rules="rules" ref="loginForm">
                             <el-form-item label="账号" prop="username">

@@ -1,0 +1,107 @@
+# -----------------------------
+# Java / Spring Boot 后端部分
+# -----------------------------
+
+# Maven 相关
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+
+# Gradle 相关（如果你用的是 Gradle）
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+.gradle/
+build/
+
+# Java 临时文件
+*.class
+*.log
+*.jar
+*.war
+*.ear
+
+# IDEA 文件
+*.iml
+.idea/
+*.ipr
+*.iws
+out/
+
+# VSCode 文件
+.vscode/
+
+# 运行时环境配置
+application.properties
+application.yml
+application-dev.yml
+application-prod.yml
+
+# 操作系统生成文件
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# Node / Vue 前端部分
+# -----------------------------
+
+# node 依赖
+node_modules/
+
+# 打包输出
+dist/
+build/
+
+# 运行时文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 临时文件
+.env
+.env.*.local
+*.local
+*.cache
+*.log
+
+# Vue CLI 缓存
+.vitepress/dist
+.vuepress/dist
+.vuepress/cache
+
+# VSCode 文件
+.vscode/
+
+# Mac 系统
+.DS_Store
+
+# -----------------------------
+# 通用
+# -----------------------------
+*.swp
+*.bak
+*.tmp
+*.~*
+
+# 生成的视频或图像文件（根据项目需要添加）
+*.mp4
+*.avi
+*.png
+*.jpg
+*.jpeg
+
+# Jupyter/模型文件等
+*.ipynb
+*.pt
+*.pth
+*.onnx
+
+# 不小心提交的数据库或密钥
+*.sqlite
+*.db
+*.key
+*.pem
+*.crt

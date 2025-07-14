@@ -107,7 +107,7 @@ stream:
   warningindex: warning_table
   rabbitsender: warning
   minio:
-    endpoint: http://localhost:9000
+    endpoint: http://localhost:9005
     access-key: admin
     secret-key: 12345678
     imgbucket:
