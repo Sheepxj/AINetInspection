@@ -25,27 +25,27 @@
             <div class="list-action flex-between">
                 <div class="list-total">为您找到相关算法<span class="total-count">{{ totalCount }}</span>个</div>
                 <div class="right-button">
-                    <!-- <el-button type="primary" icon="el-icon-upload2" size="small"
-                        @click="createAlgorithm">导入模型</el-button> -->
+                    <el-button type="primary" icon="el-icon-upload2" size="small"
+                        @click="createAlgorithm">导入模型</el-button>
                 </div>
             </div>
             <div class="algorithm-list" v-loading="loadingList">
                 <div class="algorithm-card" v-for="(item, index) in renderAlgorithm" :key="index"
-                    @click.stop="viewDetail(item)">
+                    @click="viewDetail(item)">
                     <div class="thumbnail">
                         <!-- <img :src="item.imgs" alt=""> -->
                         <el-image :src="item.imgs" lazy draggable="false"></el-image>
                     </div>
                     <div class="name">{{ item.modelName }}</div>
                     <div class="scene">{{ /,/.test(item.scene) ? item.scene.replace(/,/g, "&nbsp;&nbsp;") : item.scene
-                    }}
+                        }}
                     </div>
                     <div class="desciription" :title="item.modelExplain">{{ item.modelExplain }}</div>
-                    <div class="source" v-if="item.aiModel.modelSource">
-                        <el-tag type="info" size="mini" v-if="item.aiModel.modelSource == 0">系统默认</el-tag>
+                    <div class="source" v-if="(item.aiModel && item.aiModel.modelSource !== undefined) || (item.modelSource !== undefined)">
+                        <el-tag type="info" size="mini" v-if="(item.aiModel && item.aiModel.modelSource == 0) || item.modelSource == 0">系统默认</el-tag>
                         <el-tag size="mini" v-else>用户上传</el-tag>
                     </div>
-                    <div class="action" v-if="item.aiModel.modelSource && item.aiModel.modelSource == 1">
+                    <div class="action" v-if="(item.aiModel && item.aiModel.modelSource == 1) || item.modelSource == 1">
                         <div class="status"></div>
                         <div class="more">
                             <el-dropdown size="small" @command="handleCommand($event, item)">
@@ -158,6 +158,7 @@ export default {
                         this.algorithmList.forEach(item => {
                             if (item.imgs) {
                                 item.imgs = baseURL.split("/api")[0] + item.imgs;
+                                console.log(item.imgs);
                             }
                         })
                         this.renderAlgorithm = [...this.algorithmList];
@@ -215,7 +216,10 @@ export default {
             this.getAlgorithmList();
         },
         viewDetail(row) {
-            this.$router.push({ path: "/algorithm/tryout/target", query: { id: row.id } });
+            this.$router.push({
+                name: "targetAlgorithm",
+                query: { id: row.id }
+            });
         },
         createAlgorithm() {
             this.fileList = [];
@@ -428,6 +432,7 @@ export default {
             overflow: hidden;
             text-overflow: ellipsis;
             -webkit-line-clamp: 2;
+            line-clamp: 2;
             display: -webkit-box;
             -webkit-box-orient: vertical;
         }

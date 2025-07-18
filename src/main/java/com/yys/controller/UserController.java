@@ -34,6 +34,7 @@ public class UserController {
             return JSON.toJSONString(Result.success(500,"用户名或密码错误",0,"用户名或密码错误"));
         }
         String token = JwtUtil.generateToken(user);
+        System.out.println("Bearer " + token);
         user.setToken(token);
         redisTemplate.opsForValue().set(token, user.getUserName(), 7, TimeUnit.DAYS);
         return JSON.toJSONString(Result.success("登陆成功",1,user));

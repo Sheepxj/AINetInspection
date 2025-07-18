@@ -96,7 +96,7 @@ export default {
     created() {
         var date = new Date();
         var year = date.getFullYear();
-        this.copyright = "@2014-" + year + " 思通数科(南京)信息技术有限公司 苏ICP备17066984号-1";
+        this.copyright = "@2014-" + year + " 西南交通大学";
 
         //token在本地仍然存在直接跳转首页
         if (localStorage.getItem("Authorization")) {

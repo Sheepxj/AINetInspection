@@ -64,6 +64,11 @@ const routes = [
         component: () => import("../views/algorithm/index.vue"),
       },
       {
+        path: "algorithm/tryout/target",
+        name: "targetAlgorithm",
+        component: () => import("../views/algorithm/tryout/target.vue"),
+      },
+      {
         path: "myself",
         name: "myself",
         component: () => import("../views/myself/index.vue"),

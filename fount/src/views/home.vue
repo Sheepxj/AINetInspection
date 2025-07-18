@@ -3,17 +3,17 @@
         <div id="header">
             <div class="header-left">
                 <div class="logo-img"><img src="@/assets/images/logo.png" alt=""></div>
-                <div class="system-name">思通数科 AI视频卫士</div>
+                <div class="system-name">智能电网运维平台</div>
             </div>
             <div class="header-right">
-                <div class="open-community" @click="gotoGitee">
+                <!-- <div class="open-community" @click="gotoGitee">
                     <i class="iconfont icon-gitee-fill-round"></i>
                     <span>开源社区</span>
                 </div>
                 <div class="novice-start" @click="viewGuideDoc">
                     <i class="iconfont icon-xingzhuang"></i>
                     <span>新手入门</span>
-                </div>
+                </div> -->
                 <div class="user-center" @click="gotoUserInfo">
                     <i class="el-icon-user"></i>
                     <span>个人中心</span>
@@ -89,7 +89,7 @@ export default {
 
         var date = new Date();
         var year = date.getFullYear();
-        this.copyright = "@2014-" + year + " 思通数科(南京)信息技术有限公司 苏ICP备17066984号-1";
+        this.copyright = "@2014-" + year + " 西南交通大学";
     },
     mounted() {
         if (this.isMobileDevice()) {
